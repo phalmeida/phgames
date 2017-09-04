@@ -25,8 +25,7 @@ $app = new Laravel\Lumen\Application(
 
 $app->configure('cors');
 
-// $app->withFacades();
-
+$app->withFacades();
 $app->withEloquent();
 
 /*
