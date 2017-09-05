@@ -3,3 +3,5 @@
 Homestead.json
 Homestead.yaml
 .env
+lumen_ide_helper.php
+.phpstorm.meta.php

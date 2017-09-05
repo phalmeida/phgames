@@ -24,7 +24,7 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $user = User::create($request->all());
-        return $user;
+        return response()->json($user,201);
     }
 
     public function update(Request $request, $id)
