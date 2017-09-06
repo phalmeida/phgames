@@ -15,6 +15,8 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
+$app->post('/auth/login', 'Auth\AuthController@loginPost');
+
 $app->group(['prefix'=>'api'], function () use ($app) {
     $app->get('/users', 'Api\UsersController@index');
     $app->get('/users/{id}', 'Api\UsersController@show');
