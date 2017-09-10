@@ -16,6 +16,7 @@ class CreateLigasTable extends Migration
         Schema::create('ligas',function (Blueprint $table){
             $table->increments('id');
             $table->string('name');
+            $table->string('image');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
