@@ -15,6 +15,10 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
+$app->get('/teste', function (){
+    return response(\App\Models\Categories::all());
+});
+
 $app->post('/auth/login', 'Auth\AuthController@loginPost');
 
 $app->group(['prefix'=>'api'], function () use ($app) {
