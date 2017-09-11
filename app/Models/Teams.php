@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ligas extends Model
+class Teams extends Model
 {
     protected $fillable = [
-        'id', 'nome', 'image', 'category_id'
+        'id', 'nome', 'image', 'liga_id'
     ];
 
 }
