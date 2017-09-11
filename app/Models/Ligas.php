@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ligas extends Model
 {
     protected $fillable = [
-        'id', 'nome', 'image', 'category_id'
+        'id', 'name', 'image', 'category_id'
     ];
 
 }

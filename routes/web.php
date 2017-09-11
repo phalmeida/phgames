@@ -22,6 +22,14 @@ $app->get('/teste', function (){
 $app->post('/auth/login', 'Auth\AuthController@loginPost');
 
 $app->group(['prefix'=>'api'], function () use ($app) {
+
+    $app->get('versions','Api\VersionsController@index');
+    $app->post('versions','Api\VersionsController@store');
+    $app->get('versions/{id}','Api\VersionsController@show');
+    $app->put('versions/{id}','Api\VersionsController@update');
+    $app->patch('versions/{id}','Api\VersionsController@update');
+    $app->delete('versions/{id}','Api\VersionsController@destroy');
+
     $app->get('/users', 'Api\UsersController@index');
     $app->get('/users/{id}', 'Api\UsersController@show');
     $app->post('/users', 'Api\UsersController@store');

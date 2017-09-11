@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Versions extends Model
 {
     protected $fillable = [
-        'id', 'nome'
+        'id', 'name'
     ];
 
 }
