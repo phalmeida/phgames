@@ -12,7 +12,7 @@ class VersionsController extends Controller
     protected $model;
 
     /**
-     * Injeção de Dependências de Versions
+     * Contrutor da classe
      *
      * VersionsController constructor.
      * @param Versions $versions
@@ -23,24 +23,48 @@ class VersionsController extends Controller
     }
 
 
+    /**
+     * Lista todas as versões
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function index()
     {
         $result = $this->model->all();
         return response()->json($result);
     }
 
+    /**
+     * Grava os dados da versão.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function store(Request $request)
     {
         $result = $this->model->create($request->all());
         return response()->json($result);
     }
 
+    /**
+     * Detalhe da versão
+     *
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function show($id)
     {
         $result = $this->model->findOrFail($id);
         return response()->json($result);
     }
 
+    /**
+     * Atualiza os dados da versão
+     *
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function update(Request $request, $id)
     {
         $result = $this->model->findOrFail($id);
@@ -48,6 +72,12 @@ class VersionsController extends Controller
         return response()->json($result);
     }
 
+    /**
+     * Exclui versão
+     *
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function destroy($id)
     {
         $result = $this->model->findOrFail($id);

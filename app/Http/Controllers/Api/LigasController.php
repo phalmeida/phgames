@@ -72,7 +72,7 @@ class LigasController extends Controller
     }
 
     /**
-     * Atualiza os dados da liga
+     * Exclui liga
      *
      * @param $id
      * @return \Illuminate\Http\JsonResponse
