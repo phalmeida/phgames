@@ -44,6 +44,13 @@ $app->group(['prefix'=>'api'], function () use ($app) {
     $app->patch('ligas/{id}','Api\LigasController@update');
     $app->delete('ligas/{id}','Api\LigasController@destroy');
 
+    $app->get('teams','Api\TeamsController@index');
+    $app->post('teams','Api\TeamsController@store');
+    $app->get('teams/{id}','Api\TeamsController@show');
+    $app->put('teams/{id}','Api\TeamsController@update');
+    $app->patch('teams/{id}','Api\TeamsController@update');
+    $app->delete('teams/{id}','Api\TeamsController@destroy');
+
     $app->get('/users', 'Api\UsersController@index');
     $app->get('/users/{id}', 'Api\UsersController@show');
     $app->post('/users', 'Api\UsersController@store');
