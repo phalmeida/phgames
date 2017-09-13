@@ -30,6 +30,12 @@ $app->group(['prefix'=>'api'], function () use ($app) {
     $app->patch('versions/{id}','Api\VersionsController@update');
     $app->delete('versions/{id}','Api\VersionsController@destroy');
 
+    $app->get('categories','Api\CategoriesController@index');
+    $app->post('categories','Api\CategoriesController@store');
+    $app->get('categories/{id}','Api\CategoriesController@show');
+    $app->put('categories/{id}','Api\CategoriesController@update');
+    $app->patch('categories/{id}','Api\CategoriesController@update');
+    $app->delete('categories/{id}','Api\CategoriesController@destroy');
 
     $app->get('ligas','Api\LigasController@index');
     $app->post('ligas','Api\LigasController@store');
