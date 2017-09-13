@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Ligas;
 use App\Http\Controllers\Controller;
-use League\Flysystem\Exception;
+use Illuminate\Http\Request;
 
 class LigasController extends Controller
 {
@@ -83,7 +83,6 @@ class LigasController extends Controller
 
             $result = $this->model->findOrFail($id);
             $result->delete();
-            return response()->json($result);
 
         } catch (\Exception $e) {
             return response()->json(
@@ -94,6 +93,8 @@ class LigasController extends Controller
                 ]
             );
         }
+
+        return response()->json($result);
 
     }
 

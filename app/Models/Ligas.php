@@ -15,13 +15,18 @@ class Ligas extends Model
     {
         parent::boot();
 
-        static::deleting(function($liga) {
-            throw new \Exception("Essa área não pode ser removida, ela possui 10 conteútos vinculados.");
+        static::deleting(function ($liga) {
+            $numTeams = $liga->teams()->count();
+            if ($numTeams) {
+                throw new \Exception("Essa liga não pode ser removida, ela possui {$numTeams} times vinculados.");
+            }
         });
     }
 
-
-
+    public function teams()
+    {
+        return $this->hasMany('App\Models\Teams', 'liga_id');
+    }
 
 
 }
