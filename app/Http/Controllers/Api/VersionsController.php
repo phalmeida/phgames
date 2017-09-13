@@ -22,7 +22,6 @@ class VersionsController extends Controller
         $this->model = $versions;
     }
 
-
     /**
      * Lista todas as versões
      *
